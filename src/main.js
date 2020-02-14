@@ -12,16 +12,16 @@ $(document).ready(function() {
     $('#docSearch').val("")
 
     (async () => {
-      let docService = new DpcService();
+      let docService = new DocService();
       const response = await docService.getDocByName(name);
       getElements(response);
     })();
 
     function getElements(response) {
       if (response) {
-        $('').text(``);
+        $('#docResult').text(``);
       } else {
-        $('').text(`There was an error handling your request.`);
+        $('#docResult').text(`There was an error handling your request.`);
       }
     }
 
