@@ -18,10 +18,12 @@ $(document).ready(function() {
     })();
 
     function getElements(response) {
-      for (let i = 0; i<=10; i++) {
-        let docName =  `${response.data[i].practices[0].name}`
+      for (let i = 0; i<=9; i++) {
+        let docName =  `${response.data[i].practices[0].name}`;
+        console.log(docName);
+        // $('#docResult').append(docName);
         if (response) {
-          $('#docResult').text(docName);
+          $('#docResult').append(docName);
         } else {
           $('#docResult').text(`There was an error handling your request.`);
         }
