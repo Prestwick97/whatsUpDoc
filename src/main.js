@@ -6,13 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { DocService } from './API-call';
 
 $(document).ready(function() {
-
   $('#doctorFind').submit(function(event) {
-const userSearch = $('#docSearch').val();
+    event.preventDefault();
+    const name = $('#docSearch').val();
+    $('#docSearch').val("")
 
     (async () => {
       let docService = new DpcService();
-      const response = await docService.getDocByName();
+      const response = await docService.getDocByName(name);
       getElements(response);
     })();
 
