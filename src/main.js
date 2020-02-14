@@ -18,11 +18,15 @@ $(document).ready(function() {
     })();
 
     function getElements(response) {
-      if (response) {
-        $('#docResult').text(``);
-      } else {
-        $('#docResult').text(`There was an error handling your request.`);
+      for (let i = 0; i<=10; i++) {
+        let docName =  `${response.data[i].practices[0].name}`
+        if (response) {
+          $('#docResult').text(docName);
+        } else {
+          $('#docResult').text(`There was an error handling your request.`);
+        }
       }
+      // let docName = `${response.data[0,1].practices[0].name}`
     }
   });
 });
