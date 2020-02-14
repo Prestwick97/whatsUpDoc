@@ -27,13 +27,13 @@ _In this application, the user inputs specific information to reviece a list of 
 
 ## Specs: 
 
-Program will provide a list of medical doctors within the portland area based on on conditions the user inputs into the application.
-* input: sore throat
-* output: *Portland area* -list of doctors-
-
 Program will enable the user to input the name of a doctor and recieve a list of doctors with that name.
 * input: Dr. Delaney
 * output: -list of doctors with the last name: Delaney-
+
+Program will provide a list of medical doctors within the portland area based on on conditions the user inputs into the application.
+* input: sore throat
+* output: *Portland area* -list of doctors-
 
 When program is asked to return a list of doctors, it will provide additional information about each doctor listed.
 * input: sore throat
