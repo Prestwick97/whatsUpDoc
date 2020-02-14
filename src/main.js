@@ -9,7 +9,7 @@ $(document).ready(function() {
   $('#doctorFind').submit(function(event) {
     event.preventDefault();
     const name = $('#docSearch').val();
-    $('#docSearch').val("")
+    // $('#docSearch').val("")
 
     (async () => {
       let docService = new DocService();
@@ -24,6 +24,5 @@ $(document).ready(function() {
         $('#docResult').text(`There was an error handling your request.`);
       }
     }
-
   });
 });

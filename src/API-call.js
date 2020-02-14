@@ -9,7 +9,9 @@ export class DocService {
         jsonifiedResponse = false;
       }
       return jsonifiedResponse;
-    } catch {
+    } 
+    catch 
+    {
       return false;
     }
   }
