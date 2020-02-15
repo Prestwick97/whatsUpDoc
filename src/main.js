@@ -19,11 +19,14 @@ $(document).ready(function() {
 
     function getElements(response) {
       for (let i = 0; i<=9; i++) {
-        let docName =  `${response.data[i].practices[0].name}`;
-        console.log(docName);
+        let docName = `${response.data[i].practices[0].name}`;
+        let docPatients = `${response.data[i].practices[0].accepts_new_patients}`;
+        let docWeb = `${response.data[i].practices[0].website}`;
+        let docNum = `${response.data[i].practices[0].phones[0].number}`;
+        console.log(docName + docPatients + docWeb + docNum);
         // $('#docResult').append(docName);
         if (response) {
-          $('#docResult').append(docName);
+          $('#docResult').append(docName + docPatients + docWeb + docNum);
         } else {
           $('#docResult').text(`There was an error handling your request.`);
         }
