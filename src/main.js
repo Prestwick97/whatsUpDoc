@@ -24,14 +24,12 @@ $(document).ready(function() {
         let docWeb = `${response.data[i].practices[0].website}`;
         let docNum = `${response.data[i].practices[0].phones[0].number}`;
         console.log(docName + docPatients + docWeb + docNum);
-        // $('#docResult').append(docName);
         if (response) {
-          $('#docResult').append(docName + docPatients + docWeb + docNum);
+          $('#docResult').append(docName + ' ' + docPatients + ' ' + docWeb + ' ' + docNum);
         } else {
           $('#docResult').text(`There was an error handling your request.`);
         }
       }
-      // let docName = `${response.data[0,1].practices[0].name}`
     }
   });
 });
