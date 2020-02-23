@@ -1,4 +1,4 @@
-# _What's Up Doc_
+# _What's Up Doc_ _February, 2020_
 
 #### _An application that allows you to recieve a list of doctors based on criteria from the user's input._
 
@@ -15,14 +15,14 @@ _In this application, the user inputs specific information to reviece a list of 
   * Create an account.
   * Obtain unique API key.
 * _Open your command terminal_
-* _Navigate to your desktop directory ( $ cd desktop )_
-* _Use the "$ git clone" command to clone this repository onto your desktop: $ git clone https://github.com/Prestwick97/WhatsUpDoc.git _
-* _Navigate to application directory using "$ cd WhatsUpDoc"_
-* _While in the root directory, create a file called: ".env". ( $ touch .env )._
-* _Open directory in text editor of your choice. Many computers are configured to use the command "$ code ." in the terminal to open the folder in your default text editor._
+* _Navigate to your desktop directory ``` $ cd desktop ```_
+* _Use the "$ git clone" command to clone this repository onto your desktop: ```$ git clone https://github.com/Prestwick97/WhatsUpDoc.git``` _
+* _Navigate to application directory using ```$ cd WhatsUpDoc```_
+* _While in the root directory, create a file called: ".env". ``` $ touch .env ```._
+* _Open directory in text editor of your choice. Many computers are configured to use the command ```$ code .``` in the terminal to open the folder in your default text editor._
 * _While in the text editor, add your unique API key to the program by opening the .env folder and inputting the following " API_KEY = "your unique api key here"._
-* _You may now install all of the neccessary node files by running the following command in the terminal of the program's root directory: ( $ npm install )_
-* _After all the node/webpack files have been installed, simply enter ( $ npm run start ) to open the application interface within your browser._
+* _You may now install all of the neccessary node files by running the following command in the terminal of the program's root directory: ``` $ npm install ```_
+* _After all the node/webpack files have been installed, simply enter ``` $ npm run start ``` to open the application interface within your browser._
 * _Enjoy! And stay healthy._
 
 ## Specs: 
@@ -59,7 +59,8 @@ _If you have any questions, comments, concerns, or suggestions, please contact m
 ## Technologies Used
 
 * _BetterDoctor API_
-* _Node/Webpack_
+* _Node/npm
+* Webpack_
 * _HTML 5_
 * _CSS_
   * Bootstrap

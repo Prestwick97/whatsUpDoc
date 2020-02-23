@@ -33,7 +33,7 @@ $(document).ready(function() {
           $('#docProfile').append(docProfile);
         } 
       } else {
-         $('#docProfile').text(response.status);
+         $('#docProfile').text("No results available, please input a condition, name of a doctor, or medical proffession.");
         }
     }
   });
