@@ -19,6 +19,9 @@ $(document).ready(function() {
 
     function getElements(response) {
       console.log(response);
+      if(response == false){
+        $('#docProfile').text("There is an error regarding the BetterDoctor API");
+      }
       if(response.data.length > 0) {
         for(let i = 0; i < 10; i++) {
           let docFirstName = `${response.data[i].profile.first_name}`;
