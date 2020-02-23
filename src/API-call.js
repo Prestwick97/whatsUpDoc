@@ -12,7 +12,7 @@ export class DocService {
     } 
     catch 
     {
-      return false;
+      return Response.status;
     }
   }
 }

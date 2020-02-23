@@ -19,19 +19,22 @@ $(document).ready(function() {
 
     function getElements(response) {
       console.log(response);
-      for(let i = 0; i<10; i++) {
-        let docFirstName = `${response.data[i].profile.first_name}`;
-        let docLastName = `${response.data[i].profile.last_name}`;
-        let docPatients = `${response.data[i].practices[0].accepts_new_patients}`;
-        let docWeb = `${response.data[i].practices[0].website}`;
-        let docNum = `${response.data[i].practices[0].phones[0].number}`;
-        let docProfile ="<br>" + "First name: " + docFirstName + "<br>" + "Last name: " + docLastName + "<br>" + "Accepting new patients: " + docPatients + "<br>" + "Website: " + docWeb + "<br>" +"Phone: " + docNum + "<br>";
-        if(!response.data == 0) {
+      if(response.data.length > 0) {
+        for(let i = 0; i < 10; i++) {
+          let docFirstName = `${response.data[i].profile.first_name}`;
+          let docLastName = `${response.data[i].profile.last_name}`;
+          let docPatients = `${response.data[i].practices[0].accepts_new_patients}`;
+          let docWeb = `${response.data[i].practices[0].website}`;
+          let docNum = `${response.data[i].practices[0].phones[0].number}`;
+          let docProfile ="<br>" + "First name: " + docFirstName + "<br>" + "Last name: " + docLastName + "<br>" + "Accepting new patients: " + docPatients + "<br>" + "Website: " + docWeb + "<br>" +"Phone: " + docNum + "<br>";
+          if(docProfile.includes("undefined")){
+            docProfile = docProfile.replace("undefined", "No results available");
+          }
           $('#docProfile').append(docProfile);
-        } else {
-          $('#docProfile').text(response.status);
+        } 
+      } else {
+         $('#docProfile').text(response.status);
         }
-      }
     }
   });
 });
