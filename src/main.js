@@ -8,8 +8,8 @@ import { DocService } from './API-call';
 $(document).ready(function() {
   $('#doctorFind').submit(function(event) {
     event.preventDefault();
+    $('#docProfile').empty();
     const name = $('#docSearch').val();
-    // $('#docSearch').val("")
 
     (async () => {
       let docService = new DocService();
@@ -19,24 +19,17 @@ $(document).ready(function() {
 
     function getElements(response) {
       console.log(response);
-      for (let i = 0; i<4; i++) {
+      for(let i = 0; i<10; i++) {
         let docFirstName = `${response.data[i].profile.first_name}`;
         let docLastName = `${response.data[i].profile.last_name}`;
         let docPatients = `${response.data[i].practices[0].accepts_new_patients}`;
         let docWeb = `${response.data[i].practices[0].website}`;
         let docNum = `${response.data[i].practices[0].phones[0].number}`;
-        let docImg = `${response.data[i].profile.image_url}`;
-        let docProfile = "<img src = " + docImg +">" + "</img>" +"<br>" + "First name: " + docFirstName + "<br>" + "Last name: " + docLastName + "<br>" + "Accepting new patients: " + docPatients + "<br>" + "Website: " + docWeb + "<br>" +"Phone: " + docNum + "<br>";
-        // console.log(docName + docPatients + docWeb + docNum);
-        if (response) {
-          // $('.docImg').append("<img src = " + docImg +">" + "</img>");
-          // $('.firstName').append(docFirstName);
-          // $('.lastName').append(docLastName);
-          // $('.docPatients').append(docPatients);
-          // $('.docWeb').append(docWeb);
+        let docProfile ="<br>" + "First name: " + docFirstName + "<br>" + "Last name: " + docLastName + "<br>" + "Accepting new patients: " + docPatients + "<br>" + "Website: " + docWeb + "<br>" +"Phone: " + docNum + "<br>";
+        if(!response.data == 0) {
           $('#docProfile').append(docProfile);
         } else {
-          $('#docResult').text(`There was an error handling your request.`);
+          $('#docProfile').text(response.status);
         }
       }
     }
